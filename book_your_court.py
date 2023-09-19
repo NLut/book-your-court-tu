@@ -17,12 +17,6 @@ today_day = int(today_date.strftime("%d"))
 tomorrow_date = today_date + relativedelta(day= today_day + 1)
 tomorrow = tomorrow_date.strftime("%d/%m/%y")
 
-# #set browser
-# driver = webdriver.Chrome()
-# driver.get("https://bookyourcourt.psm.tu.ac.th/account/login")
-
-# # # define wait time
-# wait = WebDriverWait(driver, 10)
 
 #login
 def login(id, pwd): #login
@@ -148,8 +142,4 @@ def two_day_same_time(std_id="",std_pwd="",period=2, sp_name="Badminton", index=
 
 
 
-#-calendar
-# span_element = driver.find_element(By.XPATH, '//*[@id="kt_body"]/bs-datepicker-container/div/div/div/div/bs-days-calendar-view/bs-calendar-layout/div[2]/table/tbody/tr[4]/td[1]/span')
-# span_text = span_element.text
-# print(span_text) --> how to get span text value
 
