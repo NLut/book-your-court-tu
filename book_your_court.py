@@ -98,6 +98,7 @@ def home(): # back to menu
     
 
 def one_day(day,std_id="", std_pwd="", period=2, sp_name="Badminton", index=8):
+    """day: 'today' or 'tomorrow' | std_id: student id, | std_pwd: student password | period: time | sp_name: sport name | index: court_no."""
     #set browser
     global driver
     driver = webdriver.Chrome()
@@ -107,13 +108,16 @@ def one_day(day,std_id="", std_pwd="", period=2, sp_name="Badminton", index=8):
     global wait
     wait = WebDriverWait(driver, 5)
     login(id=std_id, pwd=std_pwd)
-    select_info(sport_name=sp_name, date=day, court_index=index)
+    if day == "today":
+        select_info(sport_name=sp_name, date=today, court_index=index)
+    else:
+        select_info(sport_name=sp_name, date=tomorrow, court_index=index)
     book(period)
     #cancle()
     confirm()
 
 
-def two_day_same(std_id="",std_pwd="",period=2, sp_name="Badminton", index=8, test=False):
+def two_day_same_time(std_id="",std_pwd="",period=2, sp_name="Badminton", index=8, test=False):
     #set browser
     global driver
     driver = webdriver.Chrome()
